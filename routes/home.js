@@ -3,6 +3,10 @@ const path = require("path");
 
 const router = Router();
 
+router.get("/algunaRuta", (req, res) => {
+  res.send("Respuesta de algunaRuta");
+});
+
 router.get("/", (req, res) => {
   res.sendFile("./pages.json", {
     root: path.join(__dirname, "../data"),
