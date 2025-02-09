@@ -7,10 +7,6 @@ const app = express();
 const home = require("./routes/home");
 const r4 = require("./routes/4");
 
-// settings
-// app.set('case sensitive routing');
-app.set("port", 4000);
-
 // middlewares
 app.use(cors());
 app.use(express.json());
@@ -24,6 +20,13 @@ app.get("/hello/:username", (req, res) => {
   res.send(`Hello ${req.params.username}`);
 });
 
-app.listen(app.get("port"), () => {
-  console.log(`Server is running on http://localhost:${app.get("port")}`);
-});
+// Si estamos en Vercel, exportamos la app sin llamar a listen
+if (process.env.VERCEL) {
+  module.exports = app;
+} else {
+  // En desarrollo local, escuchamos en el puerto definido
+  const PORT = process.env.PORT || 4000;
+  app.listen(PORT, () => {
+    console.log(`Server is running on http://localhost:${PORT}`);
+  });
+}
