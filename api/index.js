@@ -3,8 +3,8 @@ const cors = require("cors");
 
 const app = express();
 
-// const home = require("../routes/home");
-// const r4 = require("../routes/4");
+const home = require("../routes/home");
+const r4 = require("../routes/r4");
 
 // middlewares
 app.use(cors());
@@ -15,7 +15,7 @@ app.use(express.json());
 // app.use(r4);
 
 app.get("/", (req, res) => {
-  res.send("Hola, la función serverless funciona correctamente.");
+  res.send(`${home} - ${r4}`);
 });
 
 app.get("/hello/:username", (req, res) => {
