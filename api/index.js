@@ -11,12 +11,8 @@ app.use(cors());
 app.use(express.json());
 
 // routes
-// app.use(home);
+app.use(home);
 // app.use(r4);
-
-app.get("/", (req, res) => {
-  res.send("Hola");
-});
 
 app.get("/a", (req, res) => {
   console.log(home)
