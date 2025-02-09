@@ -4,7 +4,7 @@ const cors = require("cors");
 const app = express();
 
 const home = require("../routes/home");
-const r4 = require("../routes/r4");
+// const r4 = require("../routes/r4");
 
 // middlewares
 app.use(cors());
@@ -15,7 +15,16 @@ app.use(express.json());
 // app.use(r4);
 
 app.get("/", (req, res) => {
-  res.send(`${home} - ${r4}`);
+  res.send("Hola");
+});
+
+app.get("/a", (req, res) => {
+  console.log(home)
+  res.send("Home");
+});
+
+app.get("/b", (req, res) => {
+  res.send(home);
 });
 
 app.get("/hello/:username", (req, res) => {
