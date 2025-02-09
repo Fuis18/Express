@@ -1,19 +1,22 @@
 const express = require("express");
 const cors = require("cors");
-const path = require("path");
 
 const app = express();
 
-const home = require("../routes/home");
-const r4 = require("../routes/4");
+// const home = require("../routes/home");
+// const r4 = require("../routes/4");
 
 // middlewares
 app.use(cors());
 app.use(express.json());
 
 // routes
-app.use(home);
-app.use(r4);
+// app.use(home);
+// app.use(r4);
+
+app.get("/", (req, res) => {
+  res.send("Hola, la función serverless funciona correctamente.");
+});
 
 app.get("/hello/:username", (req, res) => {
   console.log(req.query); // ?page=asdas
