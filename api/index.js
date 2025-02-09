@@ -14,15 +14,6 @@ app.use(express.json());
 app.use(home);
 // app.use(r4);
 
-app.get("/a", (req, res) => {
-  console.log(home)
-  res.send("Home");
-});
-
-app.get("/b", (req, res) => {
-  res.send(home);
-});
-
 app.get("/hello/:username", (req, res) => {
   console.log(req.query); // ?page=asdas
   res.send(`Hello ${req.params.username}`);
