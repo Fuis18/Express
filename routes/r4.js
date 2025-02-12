@@ -29,27 +29,27 @@ const transporter = nodemailer.createTransport({
 });
 
 // Enviar la lista por correo y vaciar Admission
-router.post("/pages/r4/mail", async (req, res) => {
-  if (Admission.length === 0) {
-    return res.status(400).json({ error: "No hay datos para enviar" });
-  }
+// router.post("/pages/r4/mail", async (req, res) => {
+//   if (Admission.length === 0) {
+//     return res.status(400).json({ error: "No hay datos para enviar" });
+//   }
 
-  const mailOptions = {
-    from: "fuis18larc01z@gmail.com",
-    to: "warfuis18larcz018@gmail.com", // Correo de destino
-    subject: "Lista de Admisiones",
-    text: `Lista de registros:\n\n${Admission.map(a => `${a.id}. ${a.name} ${a.last} - ${a.mail}`).join("\n")}`
-  };
+//   const mailOptions = {
+//     from: "fuis18larc01z@gmail.com",
+//     to: "warfuis18larcz018@gmail.com", // Correo de destino
+//     subject: "Lista de Admisiones",
+//     text: `Lista de registros:\n\n${Admission.map(a => `${a.id}. ${a.name} ${a.last} - ${a.mail}`).join("\n")}`
+//   };
 
-  try {
-    await transporter.sendMail(mailOptions);
-    console.log("Correo enviado con éxito");
-    Admission = []; // Limpiar la lista después de enviar
-    res.json({ success: "Correo enviado y datos reseteados" });
-  } catch (error) {
-    console.error("Error enviando correo:", error);
-    res.status(500).json({ error: "Error enviando correo" });
-  }
-});
+//   try {
+//     await transporter.sendMail(mailOptions);
+//     console.log("Correo enviado con éxito");
+//     Admission = []; // Limpiar la lista después de enviar
+//     res.json({ success: "Correo enviado y datos reseteados" });
+//   } catch (error) {
+//     console.error("Error enviando correo:", error);
+//     res.status(500).json({ error: "Error enviando correo" });
+//   }
+// });
 
 module.exports = router;
