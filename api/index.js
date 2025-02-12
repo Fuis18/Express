@@ -22,9 +22,9 @@ app.get("/hello/:username", (req, res) => {
 });
 
 // Si estamos en Vercel, exportamos la app sin llamar a listen
-// module.exports = (req, res) => app(req, res);
+module.exports = (req, res) => app(req, res);
 // En desarrollo local, escuchamos en el puerto definido
-const PORT = process.env.PORT || 4000;
-app.listen(PORT, () => {
-  console.log(`Server is running on http://localhost:${PORT}`);
-});
+// const PORT = process.env.PORT || 4000;
+// app.listen(PORT, () => {
+//   console.log(`Server is running on http://localhost:${PORT}`);
+// });
