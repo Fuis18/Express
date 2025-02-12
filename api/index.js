@@ -13,8 +13,8 @@ app.use(express.json());
 
 // routes
 app.use(home);
-app.use(r4);
-app.use(r6);
+// app.use(r4);
+// app.use(r6);
 
 app.get("/hello/:username", (req, res) => {
   console.log(req.query); // ?page=asdas
