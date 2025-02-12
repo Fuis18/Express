@@ -29,10 +29,10 @@ const transporter = nodemailer.createTransport({
 });
 
 // Enviar la lista por correo y vaciar Admission
-// router.post("/pages/r4/mail", async (req, res) => {
-//   if (Admission.length === 0) {
-//     return res.status(400).json({ error: "No hay datos para enviar" });
-//   }
+router.post("/pages/r4/mail", async (req, res) => {
+  if (Admission.length === 0) {
+    return res.status(400).json({ error: "No hay datos para enviar" });
+  }
 
 //   const mailOptions = {
 //     from: "fuis18larc01z@gmail.com",
@@ -50,6 +50,6 @@ const transporter = nodemailer.createTransport({
 //     console.error("Error enviando correo:", error);
 //     res.status(500).json({ error: "Error enviando correo" });
 //   }
-// });
+});
 
 module.exports = router;
