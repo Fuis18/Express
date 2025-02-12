@@ -3,7 +3,8 @@ const { Router } = require("express");
 
 const router = Router();
 
-const Admission = require(path.join(__dirname, "../data", "./admission.js"));
+// const Admission = require(path.join(__dirname, "../data", "./admission.js"));
+let Admission = [];
 
 router.get("/pages/r4", (req, res) => {
   res.json(Admission);

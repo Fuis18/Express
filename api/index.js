@@ -4,7 +4,7 @@ const cors = require("cors");
 const app = express();
 
 const home = require("../routes/home");
-// const r4 = require("../routes/r4");
+const r4 = require("../routes/r4");
 const r6 = require("../routes/r6");
 
 // middlewares
@@ -13,7 +13,7 @@ app.use(express.json());
 
 // routes
 app.use(home);
-// app.use(r4);
+app.use(r4);
 app.use(r6);
 
 app.get("/hello/:username", (req, res) => {
