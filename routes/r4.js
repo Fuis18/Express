@@ -1,6 +1,6 @@
 const { Router } = require("express");
 // const path = require("path");
-const nodemailer = require("nodemailer");
+// const nodemailer = require("nodemailer");
 
 const router = Router();
 
@@ -20,19 +20,19 @@ router.post("/pages/r4", (req, res) => {
 });
 
 // Enviarlo al mail
-const transporter = nodemailer.createTransport({
-  service: "gmail", // O usa SMTP personalizado
-  auth: {
-    user: "fuis18larc01z@gmail.com", // Tu correo
-    pass: "nprg rukg ihcb guf" // Tu contraseña (o usa un App Password si es Gmail)
-  }
-});
+// const transporter = nodemailer.createTransport({
+//   service: "gmail", // O usa SMTP personalizado
+//   auth: {
+//     user: "fuis18larc01z@gmail.com", // Tu correo
+//     pass: "nprg rukg ihcb guf" // Tu contraseña (o usa un App Password si es Gmail)
+//   }
+// });
 
 // Enviar la lista por correo y vaciar Admission
-router.post("/pages/r4/mail", async (req, res) => {
-  if (Admission.length === 0) {
-    return res.status(400).json({ error: "No hay datos para enviar" });
-  }
+// router.post("/pages/r4/mail", async (req, res) => {
+//   if (Admission.length === 0) {
+//     return res.status(400).json({ error: "No hay datos para enviar" });
+//   }
 
 //   const mailOptions = {
 //     from: "fuis18larc01z@gmail.com",
@@ -50,6 +50,6 @@ router.post("/pages/r4/mail", async (req, res) => {
 //     console.error("Error enviando correo:", error);
 //     res.status(500).json({ error: "Error enviando correo" });
 //   }
-});
+// });
 
 module.exports = router;
