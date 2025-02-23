@@ -4,6 +4,7 @@
     {
       "title": "None",
       "description": [
+        "Notepad",
         "Html puro",
         "Css con etiquetas",
         "Hiperlinks",
@@ -13,6 +14,7 @@
     {
       "title": "Style: old",
       "description": [
+        "Sublime Text",
         "Ingreso de datos por alerts",
         "Nivel de estilos simples",
         "Todo el código en un archivo",
@@ -35,6 +37,7 @@
     {
       "title": "Master front",
       "description": [
+        "Visual Studio",
         "Encabezado estatico",
         "Cloud - Uso de Github",
         "Implemento de modo Oscuro y Claro",
@@ -44,17 +47,28 @@
       ]
     },
     {
-      "title": "Backend",
+      "title": "Backend - Actual",
       "description": [
         "Uso de Next.js",
         "Optimización de proyectos",
         "Uso de Express.js",
-        "Uso de matemáticas"
+        "Variables globales",
+        "Uso de matemáticas",
+        "API Canva especializado",
+        "Component Clock"
       ]
     },
     {
       "title": "Data Base - Próximamente",
-      "description": ["Typescript", "More"]
+      "description": [
+        "Typescript",
+        "Multi-idioma",
+        "NestJS",
+        "PostgressSQL",
+        "Autenticacion",
+        "Notifications",
+        "More"
+      ]
     }
   ]
 }
