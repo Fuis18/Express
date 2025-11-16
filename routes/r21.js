@@ -5,7 +5,22 @@ const router = Router();
 
 // const FILE_PATH = path.join(__dirname, "../data/r21.json");
 
-let DB_DATA = [];
+let DB_DATA = [
+	{
+		enabled: true,
+		pedidos: [
+			{ pedido: "", enabled: true, complete: false },
+			{ pedido: "", enabled: false, complete: false },
+		],
+	},
+	{
+		enabled: false,
+		pedidos: [
+			{ pedido: "", enabled: true, complete: false },
+			{ pedido: "", enabled: false, complete: false },
+		],
+	},
+];
 
 router.get("/pages/r21", (req, res) => {
 	res.json(DB_DATA);
@@ -13,7 +28,16 @@ router.get("/pages/r21", (req, res) => {
 
 // Agregar un nuevo registro
 router.post("/pages/r21", (req, res) => {
-	DB_DATA = req.body; // 💥 Sobrescribe todo
+	console.log("Datos recibidos:", req.body);
+
+	// Validar que realmente recibimos un array (tu frontend siempre envía un array)
+	if (!Array.isArray(req.body)) {
+		return res.status(400).json({ error: "El body debe ser un array" });
+	}
+
+	// 🟢 Sobrescribir tal cual
+	DB_DATA = req.body;
+
 	res.json({ message: DB_DATA });
 });
 
